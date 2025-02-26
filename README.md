@@ -17,5 +17,16 @@ Before running the script, ensure the following tools are installed on your Kali
 Run these commands in the terminal to install the required tools:
 ```bash
 sudo apt update && sudo apt install macchanger ufw -y
+````
 
+### Script Details
+The script performs the following actions:
 
+- Interface Detection: Automatically detects the active network interface (e.g., eth0, wlan0) using ip link.
+- MAC Address Change: Randomizes the MAC address with macchanger.
+- Firewall Setup: Resets UFW, denies incoming traffic, allows outgoing traffic, and permits TCP ports 80 and 443.
+- Timezone Adjustment: Sets the system timezone to UTC using timedatectl.
+- Log Clearing: Clears /var/log/syslog and /var/log/auth.log after a 3-second delay (press Ctrl+C to skip).
+
+### Notes
+Limitations: This script provides basic anonymity and does not replace advanced tools like VPNs or Tor.
